@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SLEEPMATE — 7 Hari Kenali Pola Tidurmu</title>
+<style>
+:root{--bg:#f8f6ff;--card:#fff;--ink:#26233a;--mut:#716d83;--pu:#6554a4;--pu2:#8878c7;--lav:#f0edff;--mint:#e4f7ef;--pink:#ffe8f0;--line:#e8e4f1;--warn:#fff4d9;--warnt:#71551a;--okt:#236348;--bar:#8878c7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17141f;--card:#221e2e;--ink:#eeeaf8;--mut:#a9a4bd;--pu:#b7a9f0;--pu2:#8f7fd6;--lav:#2e2842;--mint:#1d3a30;--pink:#3d2531;--line:#383250;--warn:#3d3519;--warnt:#f0d98a;--okt:#8fe0b9;--bar:#9a8be0}}
+:root[data-theme="dark"]{--bg:#17141f;--card:#221e2e;--ink:#eeeaf8;--mut:#a9a4bd;--pu:#b7a9f0;--pu2:#8f7fd6;--lav:#2e2842;--mint:#1d3a30;--pink:#3d2531;--line:#383250;--warn:#3d3519;--warnt:#f0d98a;--okt:#8fe0b9;--bar:#9a8be0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input{font:inherit}button{cursor:pointer}.wrap{max-width:1060px;margin:auto;padding:20px 16px 44px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1.5px;color:var(--pu);font-size:1.15rem}.logo{width:40px;height:40px;border-radius:14px;background:var(--pu);color:var(--bg);display:grid;place-items:center;font-size:22px}
+.btn{border:0;border-radius:14px;padding:11px 16px;font-weight:750;transition:.15s;background:var(--lav);color:var(--pu)}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.pri{background:var(--pu);color:var(--bg)}.gh{background:var(--card);color:var(--mut);border:1px solid var(--line)}.sm{padding:8px 12px;font-size:.9rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin-top:18px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.hero .panel{margin:0}.art{display:grid;place-items:center;background:linear-gradient(155deg,var(--pink),var(--lav));min-height:260px;position:relative}
+.moon{width:130px;height:130px;border-radius:50%;background:#fff4c8;display:grid;place-items:center;font-size:62px;box-shadow:0 0 0 20px #fff8d855;animation:fl 4s ease-in-out infinite;border:0;cursor:pointer}@keyframes fl{50%{transform:translateY(-10px)}}
+.eb{font-size:.78rem;text-transform:uppercase;letter-spacing:1.8px;font-weight:850;color:var(--pu)}h1{font-size:clamp(2.1rem,5vw,3.9rem);line-height:1.04;letter-spacing:-2px;margin:12px 0 16px}h2{font-size:1.45rem;margin:0 0 6px}h3{margin:0 0 6px;font-size:1.02rem}.lead{color:var(--mut);max-width:620px}.hint{font-size:.83rem;color:var(--mut);margin:0}.hidden{display:none!important}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px}.feat p{margin:4px 0 0;color:var(--mut);font-size:.9rem}
+.notice,.ok{padding:12px 14px;border-radius:13px;background:var(--warn);color:var(--warnt);font-size:.9rem;margin-top:16px}.ok{background:var(--mint);color:var(--okt)}
+.sh{display:flex;align-items:center;gap:13px;margin-bottom:16px}.sn{width:42px;height:42px;flex:none;border-radius:13px;background:var(--lav);color:var(--pu);font-weight:900;display:grid;place-items:center}
+.prog{height:8px;background:var(--lav);border-radius:99px;overflow:hidden}.prog>div{height:100%;width:0;background:linear-gradient(90deg,var(--pu),var(--pu2));transition:width .3s}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fld{display:flex;flex-direction:column;gap:7px}.full{grid-column:1/-1}.fl{font-weight:750;font-size:.93rem}.q{color:var(--pu);margin-right:4px}
+input[type=text],input[type=time],input[type=date],input[type=number]{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:13px;padding:12px;outline:none}input:focus{border-color:var(--pu2);box-shadow:0 0 0 3px #8878c72a}input[type=range]{width:100%;accent-color:var(--pu)}input[type=radio]{accent-color:var(--pu)}
+.row{display:flex;gap:8px;flex-wrap:wrap}.ch{display:flex;align-items:center;gap:7px;border:1px solid var(--line);padding:9px 13px;border-radius:13px;background:var(--card);cursor:pointer;font-weight:600;transition:.15s}.ch:has(input:checked),.ch.on{background:var(--lav);border-color:var(--pu2);color:var(--pu)}
+.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.mood{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:11px 2px;text-align:center;color:var(--mut);transition:.15s}.mood span{display:block;font-size:27px;transition:.2s}.mood small{font-size:.72rem}.mood.sel{border:2px solid var(--pu2);background:var(--lav);color:var(--pu);font-weight:800}.mood.sel span{transform:scale(1.3)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:14px}.day{min-height:84px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);padding:7px;text-align:left;display:flex;flex-direction:column;justify-content:space-between}.day .d{font-size:.74rem;color:var(--mut)}.day.done{background:var(--mint)}.day.sel{outline:2px solid var(--pu2);outline-offset:1px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{border-radius:16px;padding:15px;background:var(--lav)}.stat:nth-child(2){background:var(--mint)}.stat:nth-child(3){background:var(--pink)}.stat:nth-child(4){background:var(--warn)}.big{font-size:1.6rem;font-weight:900;letter-spacing:-1px}.stat small{color:var(--mut)}
+.pill{display:inline-block;padding:4px 10px;border-radius:99px;background:var(--lav);color:var(--pu);font-size:.8rem;font-weight:800}.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.bd{padding:8px 12px;border-radius:13px;border:1px dashed var(--line);color:var(--mut);font-size:.88rem;filter:grayscale(1);opacity:.6}.bd.on{filter:none;opacity:1;background:var(--warn);color:var(--warnt);border-style:solid;border-color:transparent}
+.chart{width:100%;height:auto;margin-top:12px}.chart text{fill:var(--mut);font-size:11px}.chart .b{fill:var(--bar)}.chart .g{stroke:var(--line)}.chart .t{stroke:var(--pu);stroke-dasharray:4 4}
+.entry{border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px;background:var(--card)}.entry p{margin:4px 0 0;color:var(--mut);font-size:.9rem}.ph{width:84px;height:84px;object-fit:cover;border-radius:12px;margin-top:8px;cursor:zoom-in}
+.quote{background:linear-gradient(135deg,var(--lav),var(--pink));border-radius:22px;padding:28px;text-align:center}.quote blockquote{font-size:clamp(1.2rem,3vw,1.7rem);font-weight:850;line-height:1.35;margin:8px auto 14px;max-width:680px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.86rem;margin-top:10px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--lav);color:var(--pu);cursor:pointer;white-space:nowrap}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--pu);color:var(--bg);padding:12px 18px;border-radius:14px;opacity:0;transition:.3s;z-index:20;max-width:90%;pointer-events:none}#toast.show{opacity:1;transform:translate(-50%,0)}
+.cf{position:fixed;top:-30px;font-size:24px;z-index:30;pointer-events:none;animation:fall 1.8s ease-in forwards}@keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:.3}}
+#lb{position:fixed;inset:0;background:#000b;display:grid;place-items:center;z-index:40;padding:20px}#lb img{max-width:100%;max-height:90vh;border-radius:14px}
+@media(max-width:760px){.hero,.grid3,.fg{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.cal{gap:4px}.day{min-height:68px;padding:5px;border-radius:10px;font-size:.78rem}.day .d{font-size:.64rem}.panel{padding:18px}.mood small{font-size:.62rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo" aria-hidden="true">☾</div>SLEEPMATE</div><div class="row"><button class="btn gh sm" id="homeBtn">Beranda</button><button class="btn sm" id="adminOpen">📊 Tim</button></div></header>
+<div id="dbMsg" class="notice hidden" role="alert"></div>
+<main>
+<section id="screen1">
+ <div class="hero">
+  <div class="panel"><div class="eb">7 hari • tidur lebih berkualitas</div><h1>Teman kecil<br>untuk tidur<br><span style="color:var(--pu)">lebih baik.</span></h1>
+  <p class="lead">Pemantauan mandiri selama 7 hari membantumu mengenali pola tidur, kualitas tidur, suasana hati, dan aktivitas fisik sehari-hari. Isilah dengan jujur sesuai kondisi sebenarnya.</p>
+  <div class="row" style="margin-top:18px"><button class="btn pri" id="startBtn">Mulai perjalanan →</button><button class="btn hidden" id="resumeBtn"></button></div>
+  <p class="hint" style="margin-top:12px">Sekitar 2–3 menit per hari. Tanpa kode peserta: cukup isi namamu, progresmu tersimpan otomatis. Gunakan perangkat dan browser yang sama setiap hari agar catatanmu tetap tersambung.</p></div>
+  <div class="panel art"><button class="moon" id="moon" aria-label="Ketuk bulan untuk mengganti ekspresi">😴</button><p class="hint" style="position:absolute;bottom:14px">Ketuk bulannya 🌙</p></div>
+ </div>
+ <div class="grid3"><div class="feat">🌙<h3>Kenali tidurmu</h3><p>Catat jam tidur, bangun, dan kualitasnya.</p></div><div class="feat">🏃<h3>Gerak setiap hari</h3><p>Isi aktivitas fisik dan durasinya.</p></div><div class="feat">🔥<h3>Kumpulkan lencana</h3><p>Isi beruntun dan lihat grafik progresmu.</p></div></div>
+ <div class="notice"><strong>Privasi:</strong> jangan memasukkan informasi sensitif. Jawabanmu disimpan di server dan hanya dapat dilihat oleh tim peneliti SLEEPMATE.</div>
+</section>
+
+<section id="screen2" class="panel hidden">
+ <div class="sh"><div class="sn">01</div><div><h2>Kenalan dulu, yuk!</h2><p class="hint">Informasi ini membantu mengelompokkan hasil pemantauan.</p></div></div>
+ <form id="pf"><div class="fg">
+  <div class="fld full"><label class="fl" for="nm">Nama siswa</label><input type="text" id="nm" placeholder="Nama panggilan atau nama sesuai arahan tim" required maxlength="100" autocomplete="name"></div>
+  <div class="fld full"><span class="fl">Jenis kelamin</span><div class="row" id="gBox"></div></div></div>
+ <div class="nav"><button type="button" class="btn gh" data-go="1">← Kembali</button><button type="submit" class="btn pri" id="pfBtn">Lanjut ke check-in →</button></div></form>
+</section>
+
+<section id="screen3" class="hidden">
+ <div class="panel" style="margin-top:0">
+  <div class="sh"><div class="sn">02</div><div style="flex:1"><h2>Check-in harian</h2><p class="hint" id="who"></p></div><span class="pill" id="fp">0/10</span></div>
+  <div class="prog"><div id="fbar"></div></div>
+  <div class="fg" id="form" style="margin-top:18px">
+   <div class="fld full"><label class="fl" for="ed">Tanggal pemantauan</label><input type="date" id="ed"></div>
+   <div class="fld full"><span class="fl"><span class="q">1.</span>Bagaimana suasana hatimu hari ini?</span><div class="moods" id="moods"></div></div>
+   <div class="fld"><label class="fl" for="st"><span class="q">2.</span>Mulai tidur tadi malam pukul?</label><input type="time" id="st"></div>
+   <div class="fld"><label class="fl" for="wt"><span class="q">3.</span>Bangun pagi ini pukul?</label><input type="time" id="wt"></div>
+   <div class="fld full"><p class="ok hidden" id="durBox" style="margin:0" aria-live="polite"></p></div>
+   <div id="rq" class="fg full" style="grid-column:1/-1"></div>
+   <div class="fld full hidden" id="boW"><label class="fl" for="bo">Lainnya, tuliskan:</label><input type="text" id="bo" maxlength="300"></div>
+   <div class="fld full"><label class="fl" for="at"><span class="q">9.</span>Aktivitas fisik apa yang kamu lakukan hari ini?</label><div class="row" id="chips"></div><input type="text" id="at" placeholder="Contoh: jalan kaki, bersepeda (atau ketuk pilihan di atas)" maxlength="200"></div>
+   <div class="fld full"><label class="fl" for="am"><span class="q">10.</span>Total waktu aktivitas fisik hari ini: <strong id="amv">—</strong></label><input type="range" id="ar" min="0" max="180" step="5" value="0"><div class="row"><button type="button" class="btn sm" data-m="0">0</button><button type="button" class="btn sm" data-m="15">15</button><button type="button" class="btn sm" data-m="30">30</button><button type="button" class="btn sm" data-m="60">60</button><input type="number" id="am" min="0" max="1440" placeholder="menit" style="width:110px" inputmode="numeric"></div></div>
+   <div class="fld full"><label class="fl" for="ph"><span class="q">11.</span>Dokumentasi aktivitas (opsional)</label><input type="file" id="ph" accept="image/*"><p class="hint">Foto diperkecil otomatis. Hindari menampilkan wajah orang lain tanpa izin.</p><div id="pv"></div></div>
+  </div>
+  <div class="nav"><button class="btn gh" data-go="2">← Profil</button><button class="btn pri" id="save">Simpan check-in ✓</button></div>
+  <p id="msg" class="hint" role="status" aria-live="polite" style="margin-top:10px"></p>
+ </div>
+ <div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><div><h2>Kalender 7 hari</h2><p class="hint">Ketuk tanggal untuk mengisi atau melihat catatan.</p></div><span class="pill" id="cp"></span></div><div class="cal" id="cal"></div></div>
+ <div class="panel"><div class="sh"><div class="sn">03</div><div><h2>Progresmu</h2><p class="hint">Diperbarui setiap kali kamu menyimpan.</p></div></div><div class="stats" id="stats"></div><div class="badges" id="badges"></div><div id="chart"></div><div id="entries"></div></div>
+ <div class="nav"><button class="btn gh" data-go="2">← Profil</button><button class="btn pri" id="finish">Pesan penyemangat →</button></div>
+</section>
+
+<section id="screen4" class="panel hidden">
+ <div class="sh"><div class="sn">04</div><div><h2>Kamu sudah melangkah!</h2><p class="hint">Kebiasaan baik dibangun sedikit demi sedikit.</p></div></div>
+ <div class="quote"><div style="font-size:36px;color:var(--pu)">“</div><blockquote id="qt"></blockquote><p id="qa" class="hint" style="margin-bottom:14px"></p><button class="btn" id="nq">✨ Beri aku semangat lain</button></div>
+ <div class="nav"><button class="btn gh" data-go="3">← Kembali ke kalender</button><button class="btn pri" data-go="1">Ke beranda</button></div>
+</section>
+
+<section id="adminPanel" class="panel hidden">
+ <div class="sh"><div class="sn">📊</div><div><h2>Dashboard tim SLEEPMATE</h2><p class="hint">Data diperbarui otomatis setiap 15 detik dari semua siswa.</p></div></div>
+ <div class="stats" id="aStats"></div><div id="aChart"></div>
+ <div class="row" style="margin-top:16px;align-items:center"><input type="text" id="as" placeholder="Cari nama siswa…" style="max-width:260px"><div class="row" id="gf"></div><button class="btn pri" id="csv" style="margin-left:auto">⬇ Ekspor CSV</button></div>
+ <div class="tw"><table><thead><tr><th>Siswa</th><th>Tanggal</th><th>Mood</th><th>Tidur</th><th>Mudah tidur</th><th>Terbangun</th><th>Saat bangun</th><th>Kualitas</th><th>Hambatan</th><th>Aktivitas</th><th></th></tr></thead><tbody id="aT"></tbody></table></div><p id="aE" class="hint"></p>
+</section>
+</main>
+<p class="hint" style="text-align:center;margin-top:26px">SLEEPMATE • Untuk edukasi dan pemantauan kebiasaan; bukan alat diagnosis medis.</p>
+</div>
+<div id="toast" role="status"></div>
+<script>
+(async()=>{
+const $=i=>document.getElementById(i),DAYS=7,esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const OPTS={ease:['Sangat sulit','Sulit','Cukup mudah','Mudah','Sangat mudah'],wakeCount:['Tidak pernah','1 kali','2 kali','3 kali atau lebih'],wakeFeel:['Sangat lelah dan masih mengantuk','Lelah dan masih mengantuk','Cukup segar','Segar','Sangat segar'],quality:['Sangat buruk','Buruk','Cukup baik','Baik','Sangat baik'],barrier:['Tidak mengalami kesulitan tidur','Sulit memulai tidur','Terbangun beberapa kali saat tidur','Sulit tidur kembali setelah terbangun','Bangun terlalu pagi dan sulit tidur kembali','Lainnya']};
+const QS=[['ease',4,'Seberapa mudah kamu tertidur tadi malam?'],['wakeCount',5,'Seberapa sering kamu terbangun saat tidur tadi malam?'],['wakeFeel',6,'Bagaimana perasaanmu saat bangun tidur pagi ini?'],['quality',7,'Secara keseluruhan, bagaimana kualitas tidurmu tadi malam?'],['barrier',8,'Apakah kamu mengalami kesulitan tidur tadi malam?']];
+const MOODS=[['Sangat buruk','😣'],['Buruk','😔'],['Biasa saja','🙂'],['Baik','😊'],['Sangat baik','😄']];
+const ACTS=['Jalan kaki','Lari','Bersepeda','Senam','Futsal','Basket','Renang','Tidak ada'];
+const QUOTES=[['Kamu tidak harus sempurna setiap hari. Cukup hadir, mencoba, dan terus belajar mengenali dirimu.','Catatan kecil untuk dirimu'],['Perubahan besar sering dimulai dari kebiasaan kecil yang kamu lakukan berulang kali.','SLEEPMATE'],['Beristirahat bukan berarti menyerah. Tubuhmu juga pantas mendapat waktu untuk pulih.','Ingat hari ini'],['Satu hari yang terlewat bukan akhir perjalanan. Kamu selalu bisa mulai lagi besok.','SLEEPMATE'],['Progres bukan perlombaan. Kenali ritmemu dan hargai setiap usaha.','Untuk dirimu']];
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`,today=()=>iso(new Date()),pd=s=>new Date(s+'T12:00:00'),add=(s,n)=>{const d=pd(s);d.setDate(d.getDate()+n);return iso(d)};
+const fmt=s=>s?pd(s).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}):'—',fs=s=>pd(s).toLocaleDateString('id-ID',{day:'numeric',month:'short'});
+const sc=(n,v)=>OPTS[n].indexOf(v)+1,avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+const mins=(a,b)=>{if(!a||!b)return null;const[h1,m1]=a.split(':').map(Number),[h2,m2]=b.split(':').map(Number);return(((h2*60+m2)-(h1*60+m1))+1440)%1440},dur=m=>m==null?'—':`${Math.floor(m/60)} jam ${m%60} mnt`;
+const btxt=e=>e.barrier==='Lainnya'?'Lainnya: '+(e.barrierOther||''):e.barrier;
+const $$=s=>[...document.querySelectorAll(s)],radio=n=>document.querySelector(`input[name="${n}"]:checked`)?.value||'',setRadio=(n,v)=>$$(`input[name="${n}"]`).forEach(x=>x.checked=x.value===v);
+let db=null,uid=null,isAdmin=false,me=null,sel=null,photo=null,photoDirty=false,mood='',screen=1,dl=null,rows=[],gfil='',downloadsCap=null;
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),3200)}
+function confetti(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<26;i++){const s=document.createElement('span');s.className='cf';s.textContent=['🌙','⭐','✨','💜','🌱'][i%5];s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*.5+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2600)}}
+function show(n){screen=n;['screen1','screen2','screen3','screen4','adminPanel'].forEach((id,i)=>$(id).classList.toggle('hidden',(id==='adminPanel'?'a':i+1)!==n));scrollTo({top:0,behavior:'smooth'})}
+
+// ---- build static widgets
+$('gBox').innerHTML=['Perempuan','Laki-laki','Memilih tidak menjawab'].map(g=>`<label class="ch"><input type="radio" name="gender" value="${g}" required> ${g}</label>`).join('');
+$('moods').innerHTML=MOODS.map(m=>`<button type="button" class="mood" data-mood="${m[0]}"><span>${m[1]}</span><small>${m[0]}</small></button>`).join('');
+$('rq').innerHTML=QS.map(q=>`<div class="fld full"><span class="fl"><span class="q">${q[1]}.</span>${q[2]}</span><div class="row">${OPTS[q[0]].map(o=>`<label class="ch"><input type="radio" name="${q[0]}" value="${esc(o)}"> ${esc(o)}</label>`).join('')}</div></div>`).join('');
+$('chips').innerHTML=ACTS.map(a=>`<button type="button" class="ch" data-act="${a}">${a}</button>`).join('');
+
+// ---- connect to shared database
+// Siswa tidak perlu login: setiap perangkat membuat ID acak yang disimpan di browser.
+const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}},lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+uid=lsGet('sleepmate_uid');
+if(!/^[a-f0-9]{32}$/.test(uid||'')){uid=[...crypto.getRandomValues(new Uint8Array(16))].map(b=>b.toString(16).padStart(2,'0')).join('');lsSet('sleepmate_uid',uid)}
+let adminKey=null;try{adminKey=sessionStorage.getItem('sleepmate_admin')}catch(e){}
+async function api(action,body={}){
+ const r=await fetch('/api',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,uid,adminKey,...body})});
+ let j={};try{j=await r.json()}catch(e){}
+ if(!r.ok){const er=new Error(j.error||'error');er.code=j.error||('HTTP '+r.status);er.status=r.status;throw er}
+ return j}
+db=true;
+try{const j=await api('get');me=j.data||null}catch(e){$('dbMsg').textContent='Tidak bisa terhubung ke server ('+(e.code||'error')+'). Periksa koneksi internetmu lalu muat ulang halaman.';$('dbMsg').classList.remove('hidden')}
+function home(){const r=$('resumeBtn');if(me){r.textContent='Lanjutkan sebagai '+me.name+' →';r.classList.remove('hidden');$('startBtn').textContent='Ubah profil'}else{r.classList.add('hidden');$('startBtn').textContent='Mulai perjalanan →'}}
+const range=()=>Array.from({length:DAYS},(_,i)=>add(me?.startDate||today(),i)),days=()=>me?.days||{};
+
+// ---- profile
+$('startBtn').onclick=()=>{if(me){$('nm').value=me.name;setRadio('gender',me.gender)}show(2)};
+$('resumeBtn').onclick=openCheck;
+$('pf').onsubmit=async e=>{e.preventDefault();const name=$('nm').value.trim(),gender=radio('gender');if(!name||!gender||!db)return;$('pfBtn').disabled=true;try{const j=await api('profile',{name,gender,startDate:today()});me=j.data;openCheck()}catch(x){toast('Gagal menyimpan profil. Coba lagi. ('+(x.code||'error')+')')}$('pfBtn').disabled=false};
+function openCheck(){const r=range(),t=today();sel=r.includes(t)?t:(r.find(d=>!days()[d])||r[0]);$('ed').min=r[0];$('ed').max=r[DAYS-1];show(3);loadEntry(sel);renderAll()}
+$$('[data-go]').forEach(b=>b.onclick=()=>show(Number(b.dataset.go)));$('homeBtn').onclick=()=>show(1);
+$('moon').onclick=()=>{const f=['😴','😊','🤩','🥱','😌','😎'];$('moon').textContent=f[(f.indexOf($('moon').textContent)+1)%f.length]};
+
+// ---- form interactivity
+function setMood(m){mood=m;$$('.mood').forEach(b=>b.classList.toggle('sel',b.dataset.mood===m))}
+$$('.mood').forEach(b=>b.onclick=()=>{setMood(b.dataset.mood);progress()});
+function setMin(v){$('am').value=v;$('ar').value=Math.min(180,v||0);$('amv').textContent=v===''||v==null?'—':v+' menit';progress()}
+$$('[data-m]').forEach(b=>b.onclick=()=>setMin(Number(b.dataset.m)));$('ar').oninput=()=>setMin(Number($('ar').value));$('am').oninput=()=>setMin($('am').value===''?'':Number($('am').value));
+$$('[data-act]').forEach(b=>b.onclick=()=>{const a=b.dataset.act;let v=$('at').value.split(',').map(x=>x.trim()).filter(Boolean);if(a==='Tidak ada'){v=v.includes(a)?[]:[a];if(v[0]===a)setMin(0)}else{v=v.filter(x=>x!=='Tidak ada');v=v.includes(a)?v.filter(x=>x!==a):[...v,a]}$('at').value=v.join(', ');chips();progress()});
+function chips(){const v=$('at').value.split(',').map(x=>x.trim());$$('[data-act]').forEach(b=>b.classList.toggle('on',v.includes(b.dataset.act)))}
+function durNote(){const m=mins($('st').value,$('wt').value),b=$('durBox');if(m==null){b.classList.add('hidden');return}b.classList.remove('hidden');b.textContent=`😴 Durasi tidurmu: ${dur(m)}. `+(m<420?'Lebih singkat dari anjuran umum remaja (8–10 jam). Tidak apa-apa, catat apa adanya.':m<=600?'✅ Sesuai anjuran umum remaja (8–10 jam).':'Cukup panjang. Catat apa adanya, ya.')}
+function toggleBo(){const on=radio('barrier')==='Lainnya';$('boW').classList.toggle('hidden',!on);if(!on)$('bo').value=''}
+function progress(){const a=[mood,$('st').value,$('wt').value,...QS.map(q=>radio(q[0])),$('at').value.trim(),$('am').value].filter(x=>x!=='').length;$('fp').textContent=a+'/10';$('fbar').style.width=a*10+'%'}
+$('form').addEventListener('input',()=>{durNote();toggleBo();chips();progress()});$('form').addEventListener('change',()=>{durNote();toggleBo();progress()});
+$('ed').onchange=()=>{const v=$('ed').value;if(!v)return;if(!range().includes(v)){toast('Tanggal di luar periode 7 hari program.');$('ed').value=sel;return}sel=v;loadEntry(v);renderCal()};
+$('ph').onchange=e=>{const f=e.target.files?.[0];photo=null;photoDirty=true;$('pv').innerHTML='';if(!f)return;if(!f.type.startsWith('image/')){toast('Pilih file gambar.');return}const im=new Image();im.onload=()=>{const k=Math.min(1,800/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);photo=c.toDataURL('image/jpeg',.7);$('pv').innerHTML=`<img class="ph" src="${photo}" alt="Pratinjau foto">`};im.src=URL.createObjectURL(f)};
+function loadEntry(date){const e=days()[date]||{};$('ed').value=date;setMood(e.mood||'');$('st').value=e.sleepTime||'';$('wt').value=e.wakeTime||'';QS.forEach(q=>setRadio(q[0],e[q[0]]||''));$('bo').value=e.barrierOther||'';$('at').value=e.activityType||'';setMin(e.activityMinutes??'');$('ph').value='';$('pv').innerHTML='';photo=null;photoDirty=false;toggleBo();chips();durNote();progress();$('who').textContent='Halo, '+(me?.name||'')+'! Satu hari, satu catatan kecil.';$('msg').textContent=e.savedAt?'Catatan tanggal ini sudah tersimpan. Kamu bisa mengubahnya lalu simpan lagi.':'';
+ if(e.hasPhoto)api('photo',{date}).then(j=>{if(j.data&&sel===date){photo=j.data;$('pv').innerHTML=`<img class="ph" src="${photo}" alt="Foto tersimpan">`}}).catch(()=>{})}
+$('save').onclick=async()=>{
+ if(!me||!db)return toast('Isi profil dan pastikan database tersambung.');
+ const v={mood,sleepTime:$('st').value,wakeTime:$('wt').value,activityType:$('at').value.trim(),activityMinutes:$('am').value};QS.forEach(q=>v[q[0]]=radio(q[0]));
+ const need=[['mood',1],['sleepTime',2],['wakeTime',3],['ease',4],['wakeCount',5],['wakeFeel',6],['quality',7],['barrier',8],['activityType',9],['activityMinutes',10]].find(([k])=>v[k]===''||v[k]==null);
+ if(need)return $('msg').textContent=`Lengkapi pertanyaan nomor ${need[1]} dulu, ya.`;
+ if(v.barrier==='Lainnya'&&!$('bo').value.trim())return $('msg').textContent='Tuliskan hambatan tidur lainnya.';
+ const date=$('ed').value,old=days()[date]||{};
+ const e={date,...v,sleepMinutes:mins(v.sleepTime,v.wakeTime),barrierOther:v.barrier==='Lainnya'?$('bo').value.trim():'',activityMinutes:Number(v.activityMinutes),hasPhoto:!!photo,savedAt:new Date().toISOString()};
+ $('save').disabled=true;$('msg').textContent='Menyimpan…';
+ try{
+  const j=await api('saveDay',{entry:e,photo:photoDirty&&photo?photo:undefined});
+  me=j.data;sel=date;photoDirty=false;renderAll();$('msg').textContent='Tersimpan di database! 🌱';toast('Check-in tersimpan ✓');
+  const n=Object.keys(days()).length;if(!old.savedAt){confetti();if(n===DAYS)toast('🏆 Hebat! Kamu menyelesaikan 7 hari penuh!')}
+ }catch(x){$('msg').textContent='Gagal menyimpan ('+(x.code||'error')+'). Coba lagi sebentar lagi.'}
+ $('save').disabled=false};
+
+// ---- calendar, summary, chart, badges
+function streak(){const ds=Object.keys(days()).sort();let best=0,cur=0,prev=null;ds.forEach(d=>{cur=prev&&add(prev,1)===d?cur+1:1;best=Math.max(best,cur);prev=d});return best}
+function barChart(es,h){const W=420,H=150,bw=W/DAYS;return `<svg class="chart" viewBox="0 0 ${W} ${H+24}" role="img" aria-label="${h}">${[0,4,8,12].map(v=>`<line class="g" x1="0" x2="${W}" y1="${H-v*H/12}" y2="${H-v*H/12}"/><text x="2" y="${H-v*H/12-2}">${v}j</text>`).join('')}<line class="t" x1="0" x2="${W}" y1="${H-8*H/12}" y2="${H-8*H/12}"/>${es.map((r,i)=>{const m=r.m==null?0:Math.min(r.m,720),bh=m/720*H;return `<rect class="b" rx="6" x="${i*bw+bw*.22}" y="${H-bh}" width="${bw*.56}" height="${bh}"><title>${r.t}: ${r.m==null?'belum diisi':dur(r.m)}</title></rect><text x="${i*bw+bw/2}" y="${H+16}" text-anchor="middle">${r.t}</text>`}).join('')}</svg><p class="hint">${h} (garis putus-putus = 8 jam)</p>`}
+function renderCal(){const d=days();$('cal').innerHTML=range().map((x,i)=>`<button class="day ${d[x]?'done':''} ${x===sel?'sel':''}" data-d="${x}" aria-label="Hari ${i+1}, ${fmt(x)}, ${d[x]?'sudah diisi':'belum diisi'}"><b>Hari ${i+1}</b><span class="d">${fs(x)}</span><span>${d[x]?(MOODS.find(m=>m[0]===d[x].mood)?.[1]||'✓'):'◦'}</span></button>`).join('');$$('[data-d]').forEach(b=>b.onclick=()=>{sel=b.dataset.d;loadEntry(sel);renderCal()});$('cp').textContent=Object.keys(d).length+'/'+DAYS+' hari terisi'}
+function renderAll(){renderCal();const d=days(),es=Object.values(d).sort((a,b)=>b.date.localeCompare(a.date)),aS=avg(es.map(e=>e.sleepMinutes).filter(x=>x!=null)),aQ=avg(es.map(e=>sc('quality',e.quality)).filter(x=>x>0)),tA=es.reduce((s,e)=>s+(e.activityMinutes||0),0),st=streak();
+ $('stats').innerHTML=[['Check-in',es.length+'/'+DAYS],['Rata-rata tidur',aS==null?'—':dur(Math.round(aS))],['Kualitas tidur',aQ==null?'—':aQ.toFixed(1)+'/5'],['Aktivitas',tA+' mnt']].map(a=>`<div class="stat"><div class="big" style="${a[1].length>8?'font-size:1.05rem':''}">${a[1]}</div><strong>${a[0]}</strong></div>`).join('');
+ $('badges').innerHTML=[['🌱 Langkah pertama',es.length>=1],['🔥 3 hari beruntun',st>=3],['⭐ 5 hari beruntun',st>=5],['🏆 7 hari lengkap',es.length>=DAYS]].map(b=>`<span class="bd ${b[1]?'on':''}">${b[0]}</span>`).join('');
+ $('chart').innerHTML=barChart(range().map((x,i)=>({t:'H'+(i+1),m:d[x]?.sleepMinutes??null})),'Durasi tidur per hari');
+ $('entries').innerHTML=es.map(e=>`<div class="entry"><div style="display:flex;justify-content:space-between;gap:8px"><strong>${fmt(e.date)}</strong><span class="pill">${esc(e.mood)}</span></div><p>Tidur ${esc(e.sleepTime)} → bangun ${esc(e.wakeTime)} (${dur(e.sleepMinutes)}) · Kualitas: ${esc(e.quality)}</p><p>Mudah tidur: ${esc(e.ease)} · Terbangun: ${esc(e.wakeCount)} · Saat bangun: ${esc(e.wakeFeel)}</p><p>Aktivitas: ${esc(e.activityType)} (${esc(e.activityMinutes)} menit)</p>${e.barrier!==OPTS.barrier[0]?`<p><strong>Hambatan:</strong> ${esc(btxt(e))}</p>`:''}</div>`).join('')||'<p class="hint">Belum ada check-in. Mulai dengan catatan hari ini, ya!</p>'}
+$('finish').onclick=()=>{$('nq').click();show(4)};let qi=-1;$('nq').onclick=()=>{let n;do n=Math.floor(Math.random()*QUOTES.length);while(n===qi);qi=n;$('qt').textContent=QUOTES[n][0];$('qa').textContent='— '+QUOTES[n][1]}
+
+// ---- admin dashboard (real-time)
+const ALLC=()=>rows.flatMap(p=>Object.values(p.days||{}).map(e=>({...e,name:p.name,gender:p.gender,uid:p.uid}))).sort((a,b)=>b.date.localeCompare(a.date));
+async function loadAdmin(){try{const j=await api('adminList');rows=j.rows||[];renderAdmin()}catch(e){if(e.status===401){adminKey=null;try{sessionStorage.removeItem('sleepmate_admin')}catch(x){}clearInterval(dl);dl=null;show(1);toast('Kata sandi tim salah.')}else $('aE').textContent='Gagal memuat data ('+(e.code||'error')+').'}}
+$('adminOpen').onclick=async()=>{if(!adminKey){const k=prompt('Masukkan kata sandi tim SLEEPMATE:');if(!k)return;adminKey=k.trim();try{sessionStorage.setItem('sleepmate_admin',adminKey)}catch(e){}}show('a');$('aE').textContent='Memuat data…';await loadAdmin();if(!dl)dl=setInterval(()=>{if(screen==='a'&&!document.hidden)loadAdmin()},15000)};
+$('gf').innerHTML=['Semua','Perempuan','Laki-laki'].map(g=>`<button class="btn sm ${g==='Semua'?'pri':''}" data-g="${g}">${g}</button>`).join('');
+$$('[data-g]').forEach(b=>b.onclick=()=>{gfil=b.dataset.g==='Semua'?'':b.dataset.g;$$('[data-g]').forEach(x=>x.classList.toggle('pri',x===b));renderAdmin()});$('as').oninput=renderAdmin;
+function renderAdmin(){const all=ALLC(),aS=avg(all.map(e=>e.sleepMinutes).filter(x=>x!=null)),aQ=avg(all.map(e=>sc('quality',e.quality)).filter(x=>x>0));
+ $('aStats').innerHTML=[['Siswa',rows.length],['Total check-in',all.length],['Rata-rata tidur · kualitas',(aS==null?'—':dur(Math.round(aS)))+' · '+(aQ==null?'—':aQ.toFixed(1)+'/5')],['Melaporkan hambatan',all.filter(e=>e.barrier!==OPTS.barrier[0]).length]].map(a=>`<div class="stat"><div class="big" style="${String(a[1]).length>8?'font-size:1.05rem':''}">${a[1]}</div><strong>${a[0]}</strong></div>`).join('');
+ const byDay=Array.from({length:DAYS},(_,i)=>{const v=rows.map(p=>p.days&&p.startDate?p.days[add(p.startDate,i)]?.sleepMinutes:null).filter(x=>x!=null);return{t:'H'+(i+1),m:v.length?avg(v):null}});
+ $('aChart').innerHTML=barChart(byDay,'Rata-rata durasi tidur semua siswa per hari program');
+ const q=$('as').value.trim().toLowerCase(),f=all.filter(e=>(!gfil||e.gender===gfil)&&e.name.toLowerCase().includes(q));
+ $('aT').innerHTML=f.map(e=>`<tr><td><strong>${esc(e.name)}</strong><br><small>${esc(e.gender)}</small></td><td>${fmt(e.date)}</td><td>${esc(e.mood)}</td><td>${esc(e.sleepTime)} → ${esc(e.wakeTime)}<br><small>${dur(e.sleepMinutes)}</small></td><td>${esc(e.ease)}</td><td>${esc(e.wakeCount)}</td><td>${esc(e.wakeFeel)}</td><td>${esc(e.quality)}</td><td>${esc(btxt(e))}</td><td>${esc(e.activityType)}<br><small>${esc(e.activityMinutes)} menit</small></td><td>${e.hasPhoto?`<button class="btn sm" data-p="${e.uid}|${e.date}" aria-label="Lihat foto">📷</button>`:''}</td></tr>`).join('');
+ $$('[data-p]').forEach(b=>b.onclick=async()=>{const[u,d]=b.dataset.p.split('|');try{const s=await api('adminPhoto',{target:u,date:d});if(!s.data)return toast('Foto tidak ditemukan.');const l=document.createElement('div');l.id='lb';l.innerHTML=`<img src="${esc(s.data)}" alt="Foto aktivitas">`;l.onclick=()=>l.remove();document.body.appendChild(l)}catch(x){toast('Gagal memuat foto.')}});
+ $('aE').textContent=f.length?'':'Belum ada data yang cocok.'}
+$('csv').onclick=async()=>{const C=[['name','Nama siswa'],['gender','Jenis kelamin'],['date','Tanggal'],['mood','Suasana hati'],['sleepTime','Jam tidur'],['wakeTime','Jam bangun'],['sleepMinutes','Durasi tidur (menit)'],['ease','Kemudahan tidur'],['wakeCount','Frekuensi terbangun'],['wakeFeel','Kondisi saat bangun'],['quality','Kualitas tidur'],['barrier','Hambatan tidur'],['barrierOther','Hambatan lainnya'],['activityType','Jenis aktivitas'],['activityMinutes','Durasi aktivitas (menit)'],['savedAt','Waktu simpan']],c=v=>`"${String(v??'').replace(/"/g,'""')}"`;
+ const data='\ufeff'+[C.map(x=>c(x[1])).join(','),...ALLC().map(r=>C.map(x=>c(r[x[0]])).join(','))].join('\r\n');
+ try{const a=document.createElement('a'),u=URL.createObjectURL(new Blob([data],{type:'text/csv;charset=utf-8'}));a.href=u;a.download='sleepmate_semua_checkin.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}catch(x){toast('Unduhan gagal.')}};
+home();
+})();
+</script>
+</body>
+</html>
