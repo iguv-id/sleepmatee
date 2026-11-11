@@ -85,8 +85,15 @@ export default async (req) => {
   const store = getStore({ name: "sleepmate", consistency: "strong" });
 
   // ---------- admin ----------
-  if (action === "adminList" || action === "adminPhoto") {
+  if (action === "adminList" || action === "adminPhoto" || action === "adminDelete") {
     if (!isAdmin(body.adminKey)) return json({ error: "unauthorized" }, 401);
+    if (action === "adminDelete") {
+      if (!UID_RE.test(body.target || "")) return json({ error: "bad-request" }, 400);
+      const { blobs: photos } = await store.list({ prefix: `photo/${body.target}/` });
+      await Promise.all(photos.map((p) => store.delete(p.key)));
+      await store.delete(`resp/${body.target}`);
+      return json({ ok: true, photosDeleted: photos.length });
+    }
     if (action === "adminList") {
       const { blobs } = await store.list({ prefix: "resp/" });
       const rows = (
